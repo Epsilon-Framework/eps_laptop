@@ -1,0 +1,158 @@
+#settings-window {
+    position: absolute;
+
+    margin: 0px;
+
+    backdrop-filter: blur(13px);
+
+    background-color: #000000af;
+}
+
+.colorpicker-container {
+    display: flex;
+
+    width: 100%;
+    height: 2.2vh;
+
+    justify-content: center;
+}
+
+.colorpicker {
+    position: absolute;
+
+    border: 0px;
+    border-radius: 0.5vh;
+
+    background-color: var(--os-taskbar-background);
+
+    width: 20vh;
+    height: 2vh;
+
+    transform: translate(-50%, 0);
+
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.colorpicker-image {
+    position: absolute;
+
+    border: 0px;
+    border-radius: 0.5vh;
+
+    width: 20.3vh;
+    height: 2.14vh;
+
+    z-index: -1;
+
+    background-image: url("../images/settings/transparent_background.png");
+}
+
+input:focus { 
+    outline: none !important;
+    border-color: var(--os-taskbar-background);
+}
+
+#backgroundurl {
+    width: 24vh;
+    height: 2vh;
+}
+
+.fa-images {
+    color: whitesmoke;
+    font-size: 1.7vh;
+}
+
+.accent-settings {
+    position: block;
+    width: 100%;
+}
+
+.corner-settings {
+    position: block;
+    width: 100%;
+}
+
+.corners-container {
+    display: flex;
+
+    height: 2vh;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.checkbox {
+    height: 2vh;
+    width: 2vh;
+    bottom: 1px;
+}
+
+.corner-settings .label {
+    color: white;
+    margin-left: 0.4vh;
+    font-size: 1.7vh;
+    height: 100%;
+    text-align: left;
+}
+
+#settings-title {
+    transform: translate(0, -1px);
+}
+
+.settings-header {
+    color: whitesmoke;
+
+    border: 0px;
+    border-bottom: 1px rgba(255, 255, 255, 0.5);
+    border-style: inset;
+
+    padding: 0px;
+    margin: 1vh;
+
+    font-size: 1.7vh;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.settings-button {
+    transition: 0.1s background-color;
+
+    background-color: #1b1b1b;
+    color: #dbdbdb;
+
+    margin-top: 2vh;
+    padding: 0.5vh;
+
+    stroke: none;
+    border: none;
+
+    border-radius: 0.75vh;
+    text-align: center;
+    font-size: 1.8vh;
+    font-weight: 400;
+
+    text-transform: uppercase;
+}
+
+.settings-button:hover {
+    transition: 0.1s background-color;
+    background-color: #2e2e2e;
+}
+
+#background-apply,
+#background-reset {
+    width: 42%;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.background-settings {
+    margin-top: 2vh;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

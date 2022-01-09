@@ -1,0 +1,388 @@
+#boosting-window {    
+    background-color: #191a27;
+
+    --background: #2f303b;
+
+    --A: rgb(231, 231, 231);
+    --B: #70df70;
+    --C: #6cbdec;
+    --D: #e658e6;
+    --S: #fabf40;
+
+    /* linear-gradient(90deg, var(--A) 0%, var(--B) 25%, var(--C) 50%, var(--D) 75%, var(--S) 100%) */
+    --boosting-progessbar-gradient: linear-gradient(90deg, #66ffbf 0%, #6aff96 50%, #93ff55 100%);
+}
+
+#boosting-title {
+    color: #dddddd;
+    background-color: #1e1e29;
+}
+
+.boosting-buttons {
+    display: flex;
+    margin: 1vh;
+    align-items: center;
+    width: 100%;
+    float: left;
+}
+
+.boosting-button {
+    transition: 0.1s background-color;
+    color: #dddddd;
+    stroke: none;
+    font-size: 1.7vh;
+    border-radius: 0.5vh;
+    padding: 0.75vh 2vh 0.75vh 2vh;
+    margin-right: 0.5vh;
+    border: 0px;
+    background-color: #2a2a3a;
+}
+
+.boosting-button:hover {
+    transition: 0.1 background-color;
+    background-color: #47485a;
+}
+
+.boosting-topbar {
+    height: 9vh;
+    width: calc(100% - 1.7vh);
+    
+    border-radius: 1vh;
+    
+    padding: 0.1vh;
+    margin: 0.75vh;
+
+    background-color: #1e1e2b;
+}
+
+.boosting-topbar-top {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    margin: 0px;
+    padding: 0px;
+}
+
+.profile-info {
+    display: flex;
+    float: right;
+
+    height: 100%;
+    width: 32vh;
+
+    padding: 0.75vh;
+
+    align-items: center;
+}
+
+.profile-picture {
+    float: left;
+    border-radius: 50%;
+    width: 4vh;
+    height: 4vh;
+}
+
+.profile-text {
+    float: right;
+    margin-left: 0.5vh;
+    width: 15vh;
+}
+
+.profile-name {
+    color: #dddddd;
+    font-size: 1.5vh;
+    margin: 0px;
+}
+
+
+.boosting-balance {
+    padding: 0px;
+    margin: 0px ;
+    padding-top: 0.3vh;
+    height: 1.2vh;
+}
+
+.boosting-progressbar-container {
+    display: flex;
+
+    padding: 0px;
+    margin: 0px;
+    margin-top: 0.5vh;
+    height: 2.5vh;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.boosting-progressbar {
+    height: 1vh;
+    border-radius: 1vh;
+    width: 93%;
+    background: #ffffff0e;
+}
+
+.boosting-progressbar-fill {
+    border-radius: 1vh;
+    height: 100%;
+       /* this will do the magic */
+    -webkit-mask: linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0);
+}
+
+.boosting-progressbar-fill::after {
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-image: var(--boosting-progessbar-gradient);
+}
+
+.boosting-progressbar-label {
+    float: left;
+    color: #dddddd;
+    font-size: 1.7vh;
+    font-weight: 500;
+    text-align: center;
+    padding-top: 0.5%;
+    width: 3%;
+    height: 100%;
+}
+
+.inqueue {
+    color: #4ac22c;
+}
+
+.inqueue:hover {
+    color: white;
+    background-color: #4ac22c;
+}
+
+.outqueue {
+    color: #cc3434;
+}
+
+.outqueue {
+    color: white;
+    background-color: #cc3434;
+}
+
+.boosting-currency {
+    color: #dfd07e;
+    font-size: 1.7vh;
+}
+
+.boosting-currency::after {
+    content: "[][]";
+    font-size: attr(font-size);
+    color: transparent;
+
+    margin-left: 0.2vh;
+    margin-bottom: 5px;
+    margin-right: -0.5px;
+
+    background: transparent;
+    background-image: url("../images/boosting/coin.png");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+}
+
+.boosting-content {
+    width: calc(100% - 2vh);
+    height: calc(100% - 16vh);
+    border-radius: 1vh;
+    background-color: #1e1e2b;
+    padding: 0.5vh;
+    margin: 0.5vh;
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+    max-height: 100%;
+}
+
+.boosting-content > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.boosting-contract::-webkit-scrollbar::before {
+    content: "";
+    margin-left: 2vh;
+}
+
+.boosting-content::-webkit-scrollbar {
+    width: 2vh;
+    margin-left: 2vh;
+}
+
+.boosting-content::-webkit-scrollbar-track {
+    background: transparent;
+
+    margin-left: 2vh;
+    
+    border-radius: 1.7vh;
+    background-color: transparent;
+}
+
+.boosting-content::-webkit-scrollbar-thumb {
+    border-radius: 1.7vh;
+    background-color: #333344;
+    margin-left: 2vh;
+}
+
+/* Contracts */
+
+.boosting-contract {
+    display: flex;
+    flex-direction: column;
+
+    padding: 0.5vh;
+    height: 100%;
+    width: calc(100% - 1vh);
+    background-color: #2a2a3a;
+    border-radius: 0.8vh;
+}
+
+.boosting-contract:not(:last-child) {
+    margin-bottom: 1vh;
+}
+
+.boosting-contract-details .left,
+.boosting-contract-details .right {
+    width: 49.5%;
+}
+
+.boosting-contract-details .left {
+    float: left;
+}
+
+.boosting-contract-details .right {
+    float: right
+}
+
+.boosting-contract-text,
+.boosting-contract-buttons button {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.boosting-contract-details {
+    border-radius: 1vh;
+    padding: 0.75vh;
+    margin: 0px;
+    height: calc(50% - 1.5vh);
+    width: calc(100% - 1.5vh);
+}
+
+.boosting-contract-text {
+    color: #e0e0e0;
+    height: 2vh;
+    font-size: 1.7vh;
+
+    padding: 0px 0.5vh;
+    margin-top: 0.3vh;
+    margin-bottom: 1vh;
+    font-weight: bold;
+}
+
+p.boosting-contract-text:last-child {
+    margin-bottom: 0px;
+}
+
+.boosting-contract-text .key::after {
+    font-weight: bold;
+    content: ":";
+}
+
+
+.boosting-contract-vehicle {
+    color:#cfcfcf;
+}
+
+.boosting-contract-type.A {
+    color: var(--A);
+}
+
+.boosting-contract-type::before {
+    content: "«";
+}
+
+.boosting-contract-type::after {
+    content: "»";
+}
+
+.boosting-contract-type.B {
+    color: var(--B);
+}
+
+.boosting-contract-type.C {
+    color: var(--C);
+}
+
+.boosting-contract-type.D {
+    color: var(--D);
+}
+
+.boosting-contract-type.S {
+    color: var(--S);
+}
+
+.boosting-contract-expire-time {
+    color:#3da523;
+}
+
+.boosting-contract-vehicle,
+.boosting-contract-type,
+.boosting-contract-expire-time,
+.boosting-contract-details .boosting-currency {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 0.5vh;
+    padding-left: 0.5vh;
+    padding-right: 0.5vh;
+    border-radius: 1vh;
+    font-weight: 300;
+}
+
+
+.boosting-contract-buttons {
+    width: 100%;
+    margin-top: 0.5vh;
+}
+
+.boosting-contract-buttons button {
+    transition: 0.1s all;
+
+    padding: 0.75vh;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    margin: 0vh -0.2vh 0.3vh 0.5vh;
+    border-radius: 0.5vh;
+    font-size: 1.7vh;
+    border: 0px;
+}
+
+.boosting-contract-start-btn {
+    background-color: hsl(108, 58%, 60%);
+}
+
+.boosting-contract-start-btn:hover {
+    background-color: hsl(108, 58%, 70%);
+}
+
+.boosting-contract-transfer-btn {
+    background-color: hsl(214, 76%, 67%);
+}
+
+.boosting-contract-transfer-btn:hover {
+    background-color: hsl(214, 76%, 77%);
+}
+
+.boosting-contract-decline-btn {
+    background-color: hsl(347, 74%, 64%);
+}
+
+.boosting-contract-decline-btn:hover {
+    background-color: hsl(347, 74%, 74%);
+}

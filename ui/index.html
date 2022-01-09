@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title translate="title">Car Boosting</title>
+
+    <!-- Libs -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.js"></script> <!-- Color Plugin JQuery -->
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+
+    <script src="lib/coloris.min.js" defer></script> <!-- ColorPicker Libary -->
+    <link href="lib/coloris.min.css" rel="stylesheet">
+
+    <script src="lib/jaddons.js"></script>
+
+
+    <!-- Locales -->
+    <script>Locales = {}</script>
+    <script src="locales/en.js"></script>
+    <script src="locales/nl.js"></script>
+
+
+    <!-- OS -->
+    <script src="js/os.js" defer></script>
+    <link href="css/os.css" rel="stylesheet">
+
+    <!-- ___ APPS ___ -->
+
+    <!-- Boosting -->
+    <script src="js/boosting.js" defer></script>
+    <link href="css/boosting.css" rel="stylesheet">
+
+    <!-- Disabler -->
+    <script src="js/disabler.js" defer></script>
+    <link href="css/disabler.css" rel="stylesheet">
+
+    <!-- Settings -->
+    <script src="js/settings.js" defer></script>
+    <link href="css/settings.css" rel="stylesheet">
+
+    <!-- Main -->
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <div class="police-dispatch"></div>
+
+    <div class="screen-container">
+
+        <div class="apps"></div>
+
+        <div class="taskbar">
+            <div class="taskbar-apps"></div>
+
+            <div class="taskbar-right">
+                <div class="layout">
+                    <span id="volume" class="taskbar-trayicon">
+                        <i class="fa fa-volume-up"></i>
+                    </span>
+                    <span id="wifi" class="taskbar-trayicon">
+                        <i class="fas fa-wifi"></i>
+                    </span>
+                    <div class="taskbar-data-and-time text">
+                        <p id='taskbar-clock'>12:30</p>
+                        <p id="taskbar-date">11/05/2001</p>
+                    </div>
+                    <span id="notifications" class="taskbar-trayicon">
+                        <i class="fas fa-comment-alt"></i>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ________________________________________ Windows ________________________________________ -->
+
+        <!-- Boosting -->
+        <os-window name="boosting" width=105vh height=68vh x=50% y=50% anchor="center">
+            <div class="boosting-topbar">
+        
+                <div class="boosting-topbar-top">
+        
+                    <!-- Buttons -->
+                    <div class="boosting-buttons">
+                        <button class="boosting-button text" id="contracts-btn" translate="my_contracts">My Contracts</button>
+                        <button class="boosting-button text" id="invites-btn" translate="invites">My Contracts</button>
+                        <button class="boosting-button text inqueue" id="queue-btn" translate="join_queue">Join Queue</button>
+                    </div>
+        
+                    <!-- Profile -->
+                    <div class="profile-info">
+                        <img class="profile-picture" src="images/boosting/flux.png"></img>
+                        <div class="profile-text">
+                            <p class="profile-name text" id="boosting-name">Sinaas Appeltaart</p>
+                            <p class="boosting-balance text">
+                                <span class="boosting-currency" id="boosting-balance">5000</span>
+                            </p>
+                        </div>
+                    </div>
+        
+                </div>
+        
+                <!-- ProgressBar -->
+                <div class="boosting-progressbar-container">
+                    <p class="boosting-progressbar-label text" id="boosting-progress-left-label">A+</p>
+                    <div class="boosting-progressbar">
+                        <div class="boosting-progressbar-fill" style="width: 80%;"></div>
+                    </div>
+                    <p class="boosting-progressbar-label text" id="boosting-progress-right-label">S+</p>
+                </div>
+        
+            </div>
+        
+            <div class="boosting-content">
+                <div class="boosting-contracts"></div>
+                <div class="boosting-invites">
+                </div>
+            </div>
+        </os-window>
+
+        <!-- Disabler -->
+        <os-window name="disabler" width=65vh height=49vh x=50% y=50% anchor="center">
+            <div class="disable-header-container">
+                <h1 class="disabler-header" translate="connecting_to_host">CONNECTING TO HOST</h1>
+            </div>
+            <p id="disabler-timer">00:00.25</p>
+            <div class="disabler-top">
+                <div class="disabler-screen">
+                    <p id="disabler-sequence"></p>
+                </div>
+                <svg id="disabler-wifi-svg" width="50" height="50" viewBox="0 0 200 200" fill="#94effe">
+                    <rect id="rect_4" data-name="Rect4" width="32" height="109" rx="5" transform="translate(152 46)" />
+                    <rect id="rect_3" data-name="Rect3" width="32" height="89"  rx="5" transform="translate(118 66)" />
+                    <rect id="rect_2" data-name="Rect2" width="32" height="69"  rx="5" transform="translate(84  86)" />
+                    <rect id="rect_1" data-name="Rect1" width="32" height="50"  rx="5" transform="translate(50  105)"/>
+                    <rect id="rect_0" data-name="Rect0" width="32" height="30"  rx="5" transform="translate(16  125)"/>
+                </svg>
+            </div>
+            <div class="disabler-grid-container">
+                <div class="disabler-grid">
+                </div>    
+            </div>
+        </os-window>
+
+        <!-- Settings -->
+        <os-window name="settings" width=30vh height=70vh x=98% y=50% anchor="right">
+            <div class="background-settings">
+                <p class="settings-header text" translate="background_url">Background URL</p>
+                <i class="fa fa-images"></i>
+                <input class="input text" type='text' id='backgroundurl'>
+                <button id='background-apply' class="settings-button" translate="apply">Apply</button>
+                <button id='background-reset' class="settings-button" translate="reset">Reset</button>
+            </div>
+        
+            <div class="taskbar-settings">
+                <p class="settings-header text" translate="taskbar_color">Taskbar Color</p>
+                <div class="colorpicker-container">
+                    <input class="colorpicker" type="text" data-coloris>
+                    <div class="colorpicker-image"></div>
+                </div>
+            </div>
+        
+            <div class="corner-settings">
+                <p class="settings-header text" translate="window_corners">Window Corners</p>
+                <div class="corners-container">
+                    <div is="os-checkbox"></div>
+                    <p class="text label" translate="rounded_corners">Round Corners</p>
+                </div>
+            </div>
+        </os-window>
+
+    </div>
+
+</body>
+
+</html>

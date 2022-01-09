@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&family=Roboto:ital,wght@1,300&display=swap');
+
+@font-face {
+    font-family: glitch;
+    src: url("../fonts/glitch.otf");
+}
+
+@font-face {
+    font-family: code;
+    src: url("../fonts/code_bold.otf");
+}
+
+@font-face {
+    font-family: code_bold;
+    src: url("../fonts/code_bold.otf");
+}
+
+@font-face {
+    font-family: runic;
+    src: url("../fonts/runic.ttf");
+}
+
+
+
+#disabler-window {
+    background-color: #2a2b35;
+
+    background-size: cover;
+}
+
+.disable-header-container {
+    position: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.disabler-header {
+    margin: 1vh 10vh;
+    padding-top: 0.25vh;
+
+    color: whitesmoke;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2vh;
+    text-transform: uppercase;
+
+    border-top: 1px solid whitesmoke ;
+    border-bottom: 1px double whitesmoke;
+}
+
+#disabler-timer {
+    margin-top: 0.15vh;
+    margin: 0.5vh;
+
+    width: 100%;
+
+    color: rgb(41, 139, 37);
+    
+    font-family: 'Roboto Mono', monospace;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.3vh;
+}
+
+.disabler-top {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.disabler-screen {
+    display: flex;
+    width: 70%;
+    height: 4vh;
+
+    border-radius: 0.5vh;
+
+    justify-content: center;
+    align-items: center;
+
+    background-color: black;
+    border: 1px rgb(170, 161, 161) solid;
+}
+
+#disabler-sequence {
+    position: absolute;
+    font-family: "Roboto", sans-serif;
+
+    font-size: 2.8vh;
+    font-weight: bolder;
+    text-align: center;
+
+    color: whitesmoke;
+}
+
+#disabler-wifi-svg {
+    position: absolute;
+    right: 2.5%;
+    fill: rgb(38, 36, 44);
+
+    --on: #63a2f5;
+    --off: rgb(38, 36, 44);
+
+    --rect0: var(--off);
+    --rect1: var(--off);
+    --rect2: var(--off);
+    --rect3: var(--off);
+    --rect4: var(--off);
+
+    animation-name: toggle;
+    animation-direction: initial;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+}
+
+
+#disabler-wifi-svg rect[id=rect_0] {
+    fill: var(--rect0);
+}
+
+#disabler-wifi-svg rect[id=rect_1] {
+    fill: var(--rect1);
+}
+
+#disabler-wifi-svg rect[id=rect_2] {
+    fill: var(--rect2);
+}
+
+#disabler-wifi-svg rect[id=rect_3] {
+    fill: var(--rect3);
+}
+
+#disabler-wifi-svg rect[id=rect_4] {
+    fill: var(--rect4);
+}
+
+
+.disabler-grid-container {
+    width: 97%;
+    height: 62.1%;
+
+    justify-items: center;
+    align-items: center;
+
+    margin: 1vh;
+
+    border-radius: 0.5vh;
+    background-color: black;
+
+    border: 1px rgb(170, 161, 161) solid;
+}
+
+.disabler-grid {
+    display: grid;
+    justify-content: center;
+
+    margin: 2vh;
+
+    grid-column-gap: 3vh;
+    grid-row-gap: 1vh;
+}
+
+.disabler-grid span {
+    animation: all 1s;
+
+    font-family: "Roboto", sans-serif;
+    font-weight: bolder;
+    color: white;
+    font-size: 2.3vh;
+}
+
+.disabler-grid span.disabler-selected {
+    color: rgb(253, 67, 67);
+}
+
+.disabler-grid span.disabler-cheat {
+    color: rgb(241, 208, 99);
+}
+
+.disabler-grid span.disabler-selected.disabler-cheat {
+    color: #e6b42d;
+}
+
+
+@keyframes toggle {
+      0% { --rect0: var(--off); --rect1: var(--off); --rect2: var(--off); --rect3: var(--off); --rect4: var(--off); }
+     17% { --rect0: var( --on); --rect1: var(--off); --rect2: var(--off); --rect3: var(--off); --rect4: var(--off); }
+     34% { --rect0: var( --on); --rect1: var( --on); --rect2: var(--off); --rect3: var(--off); --rect4: var(--off); }
+     51% { --rect0: var( --on); --rect1: var( --on); --rect2: var( --on); --rect3: var(--off); --rect4: var(--off); }
+     68% { --rect0: var( --on); --rect1: var( --on); --rect2: var( --on); --rect3: var( --on); --rect4: var(--off); }
+     85% { --rect0: var( --on); --rect1: var( --on); --rect2: var( --on); --rect3: var( --on); --rect4: var( --on); }
+    100% { --rect0: var(--off); --rect1: var(--off); --rect2: var(--off); --rect3: var(--off); --rect4: var(--off); }
+}
